@@ -30,10 +30,10 @@ export const useCartStore = defineStore('cart', {
     remove(id: string) {
       this.items = this.items.filter((i) => i.id !== id)
     },
-    setQty(id: string, qty: number) {
+    setQuantity(id: string, quantity: number) {
       const found = this.items.find((i) => i.id === id)
       if (!found) return
-      found.quantity = Math.max(1, qty)
+      found.quantity = Math.max(1, quantity)
     },
     clear() {
       this.items = []

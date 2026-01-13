@@ -4,7 +4,7 @@
       <v-col><h1 class="text-h5">Кошик</h1></v-col>
       <v-col class="text-end">
         <v-btn to="/checkout" color="primary" :disabled="cart.items.length === 0">
-          Замовити ({{ cart.totalPrice }} $)
+          Замовити ({{ cart.totalPrice }} zł)
         </v-btn>
       </v-col>
     </v-row>
@@ -28,7 +28,7 @@
           min="1"
           style="max-width: 110px"
           hide-details
-          @update:model-value="cart.setQty(i.id, qty[i.id])"
+          @update:model-value="cart.setQuantity(i.id, qty[i.id])"
         />
 
         <div style="width: 120px" class="text-end">{{ i.price * i.quantity }} zł</div>
