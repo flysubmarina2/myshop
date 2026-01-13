@@ -9,9 +9,7 @@
       </v-col>
     </v-row>
 
-    <v-alert v-if="cart.items.length === 0" type="info" variant="tonal">
-      Кошик пустий
-    </v-alert>
+    <v-alert v-if="cart.items.length === 0" type="info" variant="tonal"> Кошик пустий </v-alert>
 
     <v-card v-for="i in cart.items" :key="i.id" class="mb-3" rounded="lg">
       <v-card-text class="d-flex align-center ga-4">
@@ -25,17 +23,15 @@
         </div>
 
         <v-text-field
-            type="number"
-            min="1"
-            style="max-width: 110px"
-            hide-details
-            v-model.number="qty[i.id]"
-            @update:model-value="cart.setQty(i.id, qty[i.id])"
+          v-model.number="qty[i.id]"
+          type="number"
+          min="1"
+          style="max-width: 110px"
+          hide-details
+          @update:model-value="cart.setQty(i.id, qty[i.id])"
         />
 
-        <div style="width: 120px" class="text-end">
-          {{ i.price * i.quantity }} zł
-        </div>
+        <div style="width: 120px" class="text-end">{{ i.price * i.quantity }} zł</div>
 
         <v-btn icon variant="text" @click="cart.remove(i.id)">
           <v-icon>mdi-delete</v-icon>
@@ -52,6 +48,6 @@ const cart = useCartStore()
 const qty = reactive<Record<string, number>>({})
 
 watchEffect(() => {
-  cart.items.forEach(i => (qty[i.id] = i.quantity))
+  cart.items.forEach((i) => (qty[i.id] = i.quantity))
 })
 </script>

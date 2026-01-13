@@ -5,14 +5,14 @@ import * as directives from 'vuetify/directives'
 import 'vuetify/styles'
 
 export default defineNuxtPlugin((nuxtApp) => {
-    const vuetify = createVuetify({
-        components,
-        directives,
-        icons:{
-            defaultSet: 'mdi',
-        },
-        ssr: true,
-    })
+  const vuetify = createVuetify({
+    components,
+    directives,
+    icons: {
+      defaultSet: 'mdi'
+    },
+    ssr: true
+  })
 
-    nuxtApp.vueApp.use(vuetify)
+  nuxtApp.vueApp.use(vuetify)
 })

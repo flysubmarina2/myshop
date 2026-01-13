@@ -4,19 +4,19 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  css: [
-    'vuetify/styles',
-    '@mdi/font/css/materialdesignicons.css',
-  ],
+
+  css: ['vuetify/styles', '@mdi/font/css/materialdesignicons.css'],
+
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify']
   },
+
   vite: {
     ssr: {
-      noExternal: ['vuetify'],
+      noExternal: ['vuetify']
     },
-    plugins: [
-      vuetify()
-    ],
+    plugins: [vuetify()]
   },
+
+  modules: ['@nuxt/eslint']
 })

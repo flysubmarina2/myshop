@@ -3,22 +3,16 @@
     <v-img :src="product.image" height="180" cover />
     <v-card-title class="text-wrap">{{ product.title }}</v-card-title>
 
-    <v-card-subtitle>
-      {{ product.price }} zł
-    </v-card-subtitle>
+    <v-card-subtitle> {{ product.price }} zł </v-card-subtitle>
 
     <v-spacer />
 
     <v-card-actions>
-      <v-btn :to="`/products/${product.id}`" variant="tonal">
-        Докладніше
-      </v-btn>
+      <v-btn :to="`/products/${product.id}`" variant="tonal"> Докладніше </v-btn>
 
       <v-spacer />
 
-      <v-btn color="primary" @click="addToCart">
-        У кошик
-      </v-btn>
+      <v-btn color="primary" @click="addToCart"> У кошик </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -38,7 +32,6 @@ function addToCart() {
 </script>
 
 <style scoped>
-
 .product-card {
   display: flex;
   flex-direction: column;

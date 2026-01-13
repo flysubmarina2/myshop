@@ -11,14 +11,7 @@
     </v-row>
 
     <v-row>
-      <v-col
-          v-for="p in filtered"
-          :key="p.id"
-          cols="12"
-          sm="6"
-          md="4"
-          lg="3"
-      >
+      <v-col v-for="p in filtered" :key="p.id" cols="12" sm="6" md="4" lg="3">
         <ProductCard :product="p" />
       </v-col>
     </v-row>
@@ -27,11 +20,13 @@
 
 <script setup lang="ts">
 import ProductCard from '~/components/ProductCard.vue'
-import type {ServerProduct} from "~/stores/cart";
+import type { ServerProduct } from '~/stores/cart'
 
 const q = ref('')
 
-const {data: products} = await useFetch<ServerProduct[]>('https://fakestoreapi.com/products?limit=200')
+const { data: products } = await useFetch<ServerProduct[]>(
+  'https://fakestoreapi.com/products?limit=200'
+)
 
 const filtered = computed(() => {
   const s = q.value.trim().toLowerCase()
@@ -39,7 +34,6 @@ const filtered = computed(() => {
 
   if (!s) return resultProducts
 
-  return resultProducts.filter(p => p.title.toLowerCase().includes(s))
+  return resultProducts.filter((p) => p.title.toLowerCase().includes(s))
 })
-
 </script>
