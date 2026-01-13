@@ -1,6 +1,6 @@
 <template>
   <v-card :elevation="6" class="product-card h-100" rounded="lg">
-    <v-img :src="product.image" height="180" cover />
+    <v-img :src="product.image" height="180" />
     <v-card-title class="text-wrap">{{ product.title }}</v-card-title>
 
     <v-card-subtitle> {{ product.price }} zł </v-card-subtitle>
@@ -12,7 +12,7 @@
 
       <v-spacer />
 
-      <v-btn color="primary" @click="addToCart"> У кошик </v-btn>
+      <v-btn color="primary" variant="elevated" @click="addToCart"> У кошик </v-btn>
     </v-card-actions>
   </v-card>
 </template>

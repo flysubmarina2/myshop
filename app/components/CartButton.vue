@@ -5,7 +5,7 @@ const cart = useCartStore()
 </script>
 
 <template>
-  <v-btn :to="{ name: 'cart' }" v-if="cart.totalCount > 0" icon class="cart-btn">
+  <v-btn v-if="cart.totalCount > 0" :to="{ name: 'cart' }" icon class="cart-btn">
     <v-badge :content="cart.totalCount" color="red" floating>
       <v-icon size="28">mdi-cart</v-icon>
     </v-badge>
